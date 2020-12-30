@@ -1,0 +1,19 @@
+version: '2.2'
+services:
+  master:
+    image: dror_locust_looker:latest
+    cpus: '2'
+    ports:
+      - "8089:8089"
+      - "5557:5557"
+      - "5558:5558"
+    volumes:
+      - ./Test-Scripts:/mnt/locust
+    command: -f /mnt/locust/locust_selenium.py --master
+
+  worker:
+    image: dror_locust_looker:latest
+    cpus: '1'
+    volumes:
+      - ./Test-Scripts:/mnt/locust
+    command: -f /mnt/locust/locust_selenium.py --slave --master-host=master

@@ -1,0 +1,16 @@
+
+'conf':
+  redis_host: 'localhost'
+  email: ''
+  pass: ''
+  site: 'https://liveperson.cloud.looker.com/'
+  dashboard_id: '8'
+  filters_combinations_big:
+    list:
+      - "DATE=90+day"
+      - "DATE=60+day"
+      - "DATE=30+day"
+  filters_combinations_small:
+    list:
+      - "DATE=14+day"
+      - "DATE=7+day"
